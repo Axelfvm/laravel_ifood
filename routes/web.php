@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-use App\Http\Controllers\testeController;
+use App\Http\Controllers\Controller;
 
 
 Route::get('/', function () {
@@ -21,7 +21,10 @@ Route::get('/', function () {
 });
 
 
-Route::resource('teste/{id}', testeController::class);
+route::get('admin/plans', 'App\Http\Controllers\Admin\PlanController@index')->name('plans.index');
 
 
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
