@@ -21,10 +21,13 @@ Route::get('/', function () {
 });
 
 
+
+route::get('admin/plans/create', 'App\Http\Controllers\Admin\PlanController@create')->name('plans.create');
+route::get('admin/plans/{id}', 'App\Http\Controllers\Admin\PlanController@show')->name('plans.show');
 route::get('admin/plans', 'App\Http\Controllers\Admin\PlanController@index')->name('plans.index');
 
+route::post('admin/plans', 'App\Http\Controllers\Admin\PlanController@store')->name('plans.store');
 
+route::delete('admin/plans/{id}', 'App\Http\Controllers\Admin\PlanController@delete')->name('plans.delete');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+route::any('admin/plans/search', 'App\Http\Controllers\Admin\PlanController@search')->name('plans.search');
