@@ -27,4 +27,22 @@ class DetailPlanController extends Controller
             'details' => $details,
         ]);
     }
+
+    public function create($idPlan){
+        if(!$plan = $this->plan->where('id', $idPlan)->first()){
+            return redirect()->back();
+        }
+        return view('admin.pages.plans.details.create',[
+            'plan' => $plan,
+        ]);
+    }
+
+    public function store(Request $request, $idPlan){
+
+        if(!$plan = $this->plan->where('id', $idPlan)->first()){
+            return redirect()->back();
+        }
+$plan->details()->create($request->all());
+        return redirect()->route('details.plan.index', $plan->id);
+    }
 }

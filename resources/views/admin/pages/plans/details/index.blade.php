@@ -9,7 +9,7 @@
         <li class="breadcrumb-item"><a href="{{ route('plans.show', $plan->id) }}">{{ $plan->name }}</a></li>
         <li class="breadcrumb-item active"><a href="{{ route('details.plan.index', $plan->id) }}">Detalhes</a></li>
     </ol>
-    <h1>Detalhes do Plano {{ $plan->name }} <a href="{{ route('plans.create') }}" class="btn btn-primary"><i
+    <h1>Detalhes do Plano {{ $plan->name }} <a href="{{ route('details.plan.create', $plan->id) }}" class="btn btn-primary"><i
                 class="fa fa-plus"></i></a></h1>
 
 
