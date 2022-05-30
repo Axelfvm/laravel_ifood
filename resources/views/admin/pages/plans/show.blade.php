@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', "Detagles do Plano {$plan->name}")
+@section('title', "Detalhes do Plano {$plan->name}")
 
 @section('content_header')
     <h1>Detalhes do Plano <b>{{ $plan->name }}</b></h1>
@@ -28,7 +28,7 @@
                 @csrf
 
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger">Excluir</button>
+                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Excluir</button>
             </form>
         </div>
     </div>
